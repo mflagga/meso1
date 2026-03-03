@@ -17,11 +17,16 @@ int main(){
     for (int i=0;i<=N;i++){
         psi[i] = new complex<double>[Nt+1];
     }
+    // inicjalizacja
+    for (int i=0;i<=N;i++){
+        x[i] = xmin + dx*i;
+    }
     // czystki
     delete [] x;
     for (int i=0;i<=N;i++){
         delete [] i[psi];
     }
     delete [] psi;
+    // return zero
     return 0;
 }
