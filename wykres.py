@@ -17,7 +17,7 @@ n=0
 for t in tu:
     mask = dane[:,0]==t
     plt.plot(dane[mask,1],dane[mask,2])
-    plt.tight_layout()
+    #plt.tight_layout()
     plt.title(f't={t:.2f}')
     filename = frame_dir / f"frame_{n:03d}.png"
     n+=1
