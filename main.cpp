@@ -18,7 +18,7 @@ int main(){
     const double m=1.0;
     const double hbar=1.0;
     const int N=75;
-    const int Nt=20;
+    const int Nt=200;
     const double xmin = -1.0;
     const double xmax = 1.0;
     const double tmax = 1.0;
@@ -26,7 +26,7 @@ int main(){
     const double sigma=15.0;
     const double xc=0.0;
     const double dx = (xmax-xmin)/N;
-    const double dt = (tmax)/Nt;
+    const double dt = 0.0001;
     const complex<double> iu(0,1);
     const complex<double> a=iu/(2*dx*dx);
     // alokacja
