@@ -15,10 +15,13 @@ int main(){
     double *x = new double[N+1];
     complex<double> **psi = new complex<double>*[N+1];
     for (int i=0;i<=N;i++){
-        psi[i] = new double[Nt+1];
+        psi[i] = new complex<double>[Nt+1];
     }
     // czystki
     delete [] x;
+    for (int i=0;i<=N;i++){
+        delete [] i[psi];
+    }
     delete [] psi;
     return 0;
 }
