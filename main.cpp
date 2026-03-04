@@ -5,7 +5,9 @@
 
 using namespace std;
 
-void psi_init(complex<double> **psi, int N, double A, double sigma, double *x, double xc){
+typedef complex<double> cmp;
+
+void psi_init(cmp **psi, int N, double A, double sigma, double *x, double xc){
     for (int i=1;i<N;i++){
         psi[i][0]=A*exp(-sigma*pow(x[i]-xc,2));
     }
@@ -27,13 +29,13 @@ int main(){
     const double xc=0.0;
     const double dx = (xmax-xmin)/N;
     const double dt = 0.0002;
-    const complex<double> iu(0,1);
-    const complex<double> a=iu/(2*dx*dx);
+    const cmp iu(0,1);
+    const cmp a=iu/(2*dx*dx);
     // alokacja
     double *x = new double[N+1];
-    complex<double> **psi = new complex<double>*[N+1];
+    cmp **psi = new cmp*[N+1];
     for (int i=0;i<=N;i++){
-        psi[i] = new complex<double>[Nt+1];
+        psi[i] = new cmp[Nt+1];
     }
     double *V = new double[N+1];
     double *t = new double[Nt+1];
