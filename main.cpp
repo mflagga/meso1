@@ -26,7 +26,7 @@ int main(){
     const double sigma=15.0;
     const double xc=0.0;
     const double dx = (xmax-xmin)/N;
-    const double dt = 0.0001;
+    const double dt = 0.0002;
     const complex<double> iu(0,1);
     const complex<double> a=iu/(2*dx*dx);
     // alokacja
@@ -68,7 +68,7 @@ int main(){
     // czystki
     delete [] x;
     for (int i=0;i<=N;i++){
-        delete [] i[psi];
+        delete [] psi[i];
     }
     delete [] psi;
     delete [] V;
