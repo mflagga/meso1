@@ -39,4 +39,4 @@ clean:
 	rm -f frames/frame_*.png
 	rm -f frames/framesdone.txt
 
-.PHONY: all clean gotowe
+.PHONY: all clean
