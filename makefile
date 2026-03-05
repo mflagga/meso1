@@ -35,7 +35,7 @@ frames/framesdone.txt: $(DATA) wykres.py
 
 # animuj
 evol.mp4: frames/framesdone.txt fps.dat
-	ffmpeg -framerate $(FPS) -i frames/frame_%04d.png -y -c:v h264_nvenc -preset p7 -loglevel quiet -crf 18 evol.mp4
+	ffmpeg -framerate $(FPS) -i frames/frame_%04d.png -y -loglevel quiet -crf 18 evol.mp4
 
 # posprzątaj
 clean: 
