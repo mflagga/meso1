@@ -31,6 +31,7 @@ int main(){
     const double dt = 0.0002;
     const cmp iu(0,1);
     const cmp a=iu/(2*dx*dx);
+    const int fps = 30;
     // alokacja
     double *x = new double[N+1];
     cmp **psi = new cmp*[N+1];
@@ -67,6 +68,10 @@ int main(){
             file<<t[n]<<'\t'<<x[i]<<'\t'<<norm(psi[i][n])<<'\n';
         }
     }
+    // zapis fps
+    ofstream fpsfile("fps.dat");
+    fpsfile<<fps;
+    fpsfile.close();
     // czystki
     delete [] x;
     for (int i=0;i<=N;i++){
