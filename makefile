@@ -43,5 +43,6 @@ clean:
 	rm -f $(DATA) fps.dat
 	rm -f frames/frame_*.png
 	rm -f frames/framesdone.txt
+	rm -f evol.mp4
 
 .PHONY: all clean
