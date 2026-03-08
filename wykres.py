@@ -21,6 +21,9 @@ for t in tu:
     #plt.tight_layout()
     plt.title(f't={t:.3f}')
     plt.ylim(0,psimax)
+    plt.xlabel(rf'$x$')
+    plt.ylabel(rf'$|\Psi|^2$')
+    #plt.grid(ls=":")
     filename = frame_dir / f"frame_{n:04d}.png"
     n+=1
     plt.savefig(filename)
