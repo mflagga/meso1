@@ -46,16 +46,16 @@ int main(){
     // parametry
     //const double m=1.0;
     //const double hbar=1.0;
-    const int N=75;
+    const int N=100;
     const int Nt=200;
     const double xmin = -1.0;
     const double xmax = 1.0;
-    //const double tmax = 1.0;
+    const double tmax = 0.64;
     const double A=0.457646;
     const double sigma=15.0;
     const double xc=0.0;
     const double dx = (xmax-xmin)/N;
-    const double dt = 0.0015;
+    const double dt = tmax/Nt;
     const cmp iu(0,1);
     const int fps = 30;
     // alokacja
