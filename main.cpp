@@ -7,9 +7,10 @@ using namespace std;
 
 typedef complex<double> cmp;
 
-void psi_init(cmp **psi, int N, double A, double sigma, double *x, double xc){
+void psi_init(cmp **psi, int N, double A, double sigma, double *x, double xc, double p0){
+    const cmp iu(0,1);
     for (int i=1;i<N;i++){
-        psi[0][i]=A*exp(-sigma*pow(x[i]-xc,2));
+        psi[0][i]=A*exp(-sigma*pow(x[i]-xc,2))*exp(iu*p0);
     }
     psi[0][0]=0.0;
     psi[0][N]=0.0;
@@ -48,12 +49,13 @@ int main(){
     //const double hbar=1.0;
     const int N=100;
     const int Nt=200;
-    const double xmin = -1.0;
-    const double xmax = 1.0;
+    const double xmin = -1.89;
+    const double xmax = 1.89;
     const double tmax = 0.64;
-    const double A=0.457646;
+    const double A=1.758;
     const double sigma=15.0;
-    const double xc=0.0;
+    const double p0=30.0;
+    const double xc=-1.0;
     const double dx = (xmax-xmin)/N;
     const double dt = tmax/Nt;
     const cmp iu(0,1);
@@ -79,7 +81,7 @@ int main(){
             psi[n][i]=0.0;
         }
     }
-    psi_init(psi,N,A,sigma,x,xc);
+    psi_init(psi,N,A,sigma,x,xc,p0);
     // zmienne do rozwiązania
     cmp *nw = new cmp[N-1];
     const cmp a=iu*dt;
